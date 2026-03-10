@@ -1,0 +1,263 @@
+/* تنسيق الحاوية العلوية (العنوان والعدد) */
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 15px;
+}
+
+.header-container h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+}
+
+.task-badge {
+  background: linear-gradient(135deg, #a8e546, #d2f163);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+/* تنسيق قائمة المهام */
+.task-item {
+  position: relative;
+  text-decoration: none; /* لإزالة الخط تحت النص */
+  color: inherit;       /* ليرث الألوان من التصميم الخاص بكِ */
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  justify-content:flex-start;
+  align-items: center;
+  width: 80%;;
+}
+
+.task-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-color:var(--primary-hover);
+  background-color: #ebebed; /* خلفية فاتحة جداً وأنيقة عند التمرير */
+}
+
+
+
+.task-content h3 {
+ 
+  margin: 0 0 8px 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  padding-right: 70px;
+  cursor: pointer;
+}
+
+.task-content p {
+  margin: 0 0 12px 0;
+  color:  #1e293b;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.task-content small {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* تزيين التاريخ ليظهر كأنه Label */
+.task-content small::before {
+  content: '📅'; /* أيقونة بسيطة */
+  font-size: 0.9rem;
+}
+
+.filter-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  background: #f1f5f9;
+  padding: 5px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.filter-container button {
+  border: none;
+  background: transparent;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+/* التنسيق عندما يكون الزر هو المختار حالياً */
+.filter-container button.active {
+  background-color: var(--white);
+  color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.filter-container button:hover:not(.active) {
+  color: var(--text-dark);
+}
+.delete-btn {
+  position: absolute;
+  top: 15px;      /* مسافة من الأعلى */
+  right: 15px;
+  background-color: #fff1f2; /* أحمر فاتح جداً */
+  color: #e11d48;           /* لون أحمر احترافي */
+  border: 1px solid #fecdd3;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+ z-index: 10;
+}
+
+.delete-btn:hover {
+  background-color: #e11d48;
+  color: white;
+  border-color: #e11d48;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px dashed #e2e8f0; /* إطار متقطع يعطي إيحاء بالفراغ */
+    margin: 20px 0;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: grayscale(0.5); /* جعل الأيقونة باهتة قليلاً لتناسب الحالة */
+    animation: float 3s ease-in-out infinite;
+}
+
+.empty-state h3 {
+    color: #1e293b;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.empty-state p {
+    color: #64748b;
+    max-width: 300px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.add-first-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-first-btn:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+}
+
+/* حركة بسيطة للأيقونة لجعل الصفحة حيوية */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* تنسيق الحاوية الأساسية للـ Checkbox */
+.checkbox-container {
+  display: flex;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 15px; /* مسافة عن النص */
+}
+
+/* إخفاء الـ Checkbox الأصلي */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* شكل الدائرة (الحالة الفارغة) */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #fff;
+  border: 2px solid #cbd5e1; /* لون إطار رمادي هادئ */
+  border-radius: 50%; /* لجعلها دائرية */
+  transition: all 0.2s ease-in-out;
+}
+
+/* تأثير عند تمرير الماوس */
+.checkbox-container:hover input ~ .checkmark {
+  border-color: #a8e546; /* لون أخضر فاتح من Badge الخاص بكِ */
+  background-color: #f8fafc;
+}
+
+/* التنسيق عند اختيار المهمة (Checked) */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #a8e546; /* اللون الأخضر المميز لتطبيقك */
+  border-color: #a8e546;
+}
+
+/* رسم علامة الصح داخل الدائرة */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* إظهار علامة الصح عند الاختيار */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* شكل علامة الصح */
+.checkbox-container .checkmark:after {
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

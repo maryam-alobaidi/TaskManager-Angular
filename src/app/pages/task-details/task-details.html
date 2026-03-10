@@ -1,0 +1,38 @@
+<div class="task-detail-container">
+    @if(task();as currentTask){
+        <div>
+            <div class="header">
+                <h2>{{currentTask.title}}</h2>
+                <span class="status-bsdge"
+                [class.completed]="currentTask.completed">
+            {{currentTask.completed?'Completed':'Active'}}
+                </span>
+            </div>
+            <div class="task-details">
+                <div class="detail-row">
+                    <strong>Description:</strong>
+                    <p>{{currentTask.description}}</p>
+                </div>
+                <div class="detail-row">
+                   <strong>Created:</strong>
+                    <p>{{currentTask.createdAt.toLocaleDateString()}}</p>
+                </div>
+                  <div class="detail-row">
+                   <strong>Status:</strong>
+                    <p>{{currentTask.completed ?'Completed':'In Progress'}}</p>
+                </div>
+            </div>
+            <div class="action">
+                <a routerLink="/" class="back-btn">Back to list</a>
+            </div>
+        </div>
+    }
+    @else {
+    <div class="not-found">
+        <h2>Task not found</h2>
+        <p>The task you're looking for dosn't exist</p>
+     <a routerLink="/" class="back-btn">Go Back</a>
+
+    </div>
+    }
+</div>

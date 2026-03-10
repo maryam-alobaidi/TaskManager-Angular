@@ -1,0 +1,45 @@
+
+
+<div class="header-container">
+  <h2>My Tasks</h2>
+  <span class="task-badge">{{ taskService.tasks().length }}</span>
+</div>
+
+<div class="filter-container">
+    <button (click)="setFelter('all')" [class.active]="filter()==='all'">All</button>
+    <button (click)="setFelter('active')" [class.active]="filter() === 'active'">Active</button>
+  <button (click)="setFelter('competed')" [class.active]="filter() === 'competed'">Completed</button>
+</div>
+
+@for (task of this.filteredTasks(); track task.id) {
+<div class="task-item">
+      <label class="checkbox-container">
+    <input type="checkbox" 
+           [checked]="task.completed" 
+           (change)="taskService.markCompleteTask(task.id)"
+           (click)="$event.stopPropagation()">
+    <span class="checkmark"></span>
+  </label>
+    <div class="task-content">
+        <h3  [routerLink]="['/task',task.id]" >{{task.title}}</h3>
+        <p>{{task.description}}</p>
+        <small>{{task.createdAt.toDateString()}}</small>
+       
+    </div>
+  
+
+     <button class="delete-btn" (click)="deleteTask(task.id)">Delete</button>
+</div>
+}
+
+
+@if(this.filteredTasks().length === 0) {
+    <div class="empty-state">
+        <div class="empty-icon">📝</div>
+        <h3>No tasks found</h3>
+        <p>It looks like you don't have any tasks in this category. Start by adding a new one!</p>
+        <button routerLink="/add-task" class="add-first-btn">
+            + Add Your First Task
+        </button>
+    </div>
+}

@@ -1,0 +1,103 @@
+/* الحاوية الرئيسية */
+.task-detail-container {
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 0 20px;
+}
+
+/* بطاقة التفاصيل */
+.task-detail-container > div {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+/* الهيدر (العنوان والحالة) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 20px;
+}
+
+.header h2 {
+text-transform: capitalize;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* ستايل الـ Badge (الحالة) */
+.status-bsdge {
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background-color: #fef3c7; /* لون أصفر خفيف للـ Active */
+  color: #92400e;
+}
+
+/* عندما تصبح المهمة مكتملة */
+.status-bsdge.completed {
+  background-color: #dcfce7; /* لون أخضر خفيف */
+  color: #166534;
+}
+
+/* صفوف التفاصيل */
+.task-details {
+  display: grid;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-row strong {
+  color: #64748b;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detail-row p {
+  color: #334155;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* زر الرجوع */
+.back-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+  transform: translateX(-5px);
+}
+
+/* ستايل حالة "غير موجود" */
+.not-found {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.not-found h2 {
+  color: #ef4444;
+  font-size: 2rem;
+}

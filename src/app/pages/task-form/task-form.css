@@ -1,0 +1,85 @@
+.form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* لون الإطار عندما يكون الحقل خاطئاً */
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border-color: #ef4444;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--text-dark);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+   font-size: 1rem;
+}
+
+.submit-btn:disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 0.8rem;
+}
+
+.secondary {
+  /* التنسيق الأساسي للزر */
+  background-color: transparent;
+  color: var(--text-light); /* اللون الرمادي الذي عرفناه في الـ Variables */
+  border: 1.5px solid #e2e8f0;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* لضمان عدم وجود خط تحت الكلمة */
+  margin: 5px auto;
+  width: 40%;
+  display: flex;
+}
+
+/* تأثير عند تمرير الماوس */
+.secondary:hover {
+  background-color: #f1f5f9; /* خلفية رمادية فاتحة جداً */
+  color: var(--text-dark);  /* تغميق اللون قليلاً */
+  border-color: #cbd5e1;
+  transform: translateY(-1px); /* رفعة بسيطة جداً */
+  margin: 10px auto;
+ 
+}
+
+/* تأثير عند الضغط */
+.secondary:active {
+  transform: translateY(0);
+  background-color: #e2e8f0;
+}
