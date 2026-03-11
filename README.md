@@ -1,5 +1,5 @@
 # 📝 Angular Task Manager
-A modern, reactive task management application built with **Angular 19** and **Signals**.
+A modern, reactive task management application built with **Angular 21.2.0** and **Signals**.
 
 ### 🚀 Features:
 - **Local Storage:** Your tasks are saved locally in the browser.
